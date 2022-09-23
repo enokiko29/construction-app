@@ -1,18 +1,26 @@
 require "test_helper"
 
 class HomesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get homes_index_url
-    assert_response :success
+
+  def setup
+    @base_title = "Construction App"
   end
 
-  # test "should get show" do
-  #   get homes_show_url
-  #   assert_response :success
-  # end
+  test "should get index" do
+    get root_path
+    assert_response :success
+    assert_select "title", "index | #{@base_title}"
+  end
+
+  test "should get show" do
+    get show_path
+    assert_response :success
+    assert_select "title", "show | #{@base_title}"
+  end
 
   test "should get about" do
-    get homes_about_url
+    get about_path
     assert_response :success
+    assert_select "title", "about | #{@base_title}"
   end
 end
