@@ -7,7 +7,13 @@
 one:
   name: MyString
   email: MyString
-
+  # password: password
 two:
   name: MyString
   email: MyString
+  # password: password
+
+exampleuser:
+  name: ExampleUser
+  email: user@example.com
+  encrypted_password: foobar
