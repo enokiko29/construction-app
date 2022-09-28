@@ -8,17 +8,20 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   # end
 
   def setup
-    @user = users(:exampleuser)
+    @user = users(:michael)
   end
 
- 
+  # def setup
+  #   @user = users( :michael )
+  #   sign_in(@user)
+  # end
   
 
-  test "login with valid email/invalid password" do
+  test "login with valid name/invalid password" do
     get new_user_session_path
     assert_template 'sessions/new'
-    post new_user_session_path, params: { session: { name: 'ExampleUser',
-                                          encrypted_password: "invalid" } }
+    post user_session_path, params: { session: { name: 'MichaelExample',
+                                      encrypted_password: "invalidpass1word" } }
     assert_not is_logged_in?
     assert_template 'sessions/new'
     assert_not flash.empty?
@@ -28,12 +31,13 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   # test "login with valid information followed by logout" do
   #   get new_user_session_path
-  #   post new_user_session_path, params: { session: { name: 'ExampleUser',
-  #                                         encrypted_password: 'foobar' } }
-  #   # assert is_logged_in?
-  #   # assert_redirected_to @user
-  #   # follow_redirect!
-  #   # assert_template 'users/show'
+  #   post user_session_path, params: { session: { name: 'MichaelExample',
+  #                                         password: "pass1word"} }
+  #   assert is_logged_in?
+  #   assert_redirected_to @user
+  #   follow_redirect!
+  #   assert_template 'sessions/new'
+  #   assert_template 'show'
   #   assert_select "link_to", new_user_session_path, count: 0
   #   assert_select "link_to", destroy_user_session_path
   #   assert_select "link_to", user_path(@user)
