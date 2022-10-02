@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,9 +12,11 @@ class User < ApplicationRecord
                       uniqueness: { case_sensitive: false }
     validates :password, presence: true, length: { minimum: 6 }
 
-        #  has_secure_password
-         
-  # validates :name, uniqueness: { scope: :email }
+ # 試作feedの定義
+  # 完全な実装は次章の「ユーザーをフォローする」を参照
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

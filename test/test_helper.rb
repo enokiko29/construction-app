@@ -4,7 +4,7 @@ require "rails/test_help"
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
-  # parallelize(workers: :number_of_processors)
+  parallelize(workers: :number_of_processors)
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
@@ -25,9 +25,9 @@ end
 class ActionDispatch::IntegrationTest
 
   # テストユーザーとしてログインする
-  def log_in_as(user, encrypted_password: 'password', remember_me: '1')
-    post user_session_path, params: { session: { name: user.name,
-                                      password: encrypted_password,
+  def log_in_as(user, password: 'password', remember_me: '1')
+    get new_user_session_path, params: { session: { name: user.name,
+                                          password: password,
                                           remember_me: remember_me } }
   end
 end

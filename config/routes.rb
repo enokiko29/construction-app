@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
     get 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
-
+  
+  resources :microposts,          only: [:create, :destroy]
   resources :users
+  
 
 end
