@@ -15,6 +15,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :都道府県 %><br />
+    <%= f.text_field :prefecture, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

@@ -19,6 +19,7 @@ class User < ApplicationRecord
     validates :email, presence: true, length: { maximum: 255 },
                       uniqueness: { case_sensitive: false }
     validates :password, presence: true, length: { minimum: 6 }
+    validates :prefecture, length: { maximum: 4 }
 
   # ユーザーのステータスフィードを返す
   def feed
@@ -47,6 +48,7 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.name = "ゲスト"
+      user.prefecture = "東京都"
       user.password = SecureRandom.urlsafe_base64
       user.password_confirmation = user.password
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
