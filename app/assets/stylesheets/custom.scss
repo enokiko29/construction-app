@@ -141,6 +141,28 @@ input, textarea, select, .uneditable-input {
     }
   }
 
+  .checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    span {
+      margin-left: 20px;
+      font-weight: normal;
+    }
+  }
+  
+  #session_remember_me {
+    width: auto;
+    margin-left: 0;
+  }
+
+  label {
+    display: block;
+    float: left;
+    margin-right: 15px;
+  }
+
+  
+
   /* sidebar */
 
 aside {
@@ -275,3 +297,16 @@ span.image {
     border: 0;
   }
 }
+
+.nav {
+  // ウィンドウが小さくなり、画面に収まらなくなると、横スクロールが表示される。
+    overflow-x: auto;
+  // 要素全体が垂直ではなく横並びにする。
+    display: flex;
+    li {
+  // 文字が自動で折り返さないようにする。
+      white-space: nowrap;
+    }
+  }
+
+  

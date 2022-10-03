@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+@media screen {
+    * {font-size: 16px; }  
+    }
+
+@media screen and (min-width:960px){
+    * {font-size: 16px; }  
+    }

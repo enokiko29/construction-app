@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'homes#index'
-  get  '/show',  to: 'homes#show'
   get  '/about', to: 'homes#about'
 
  
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
     get 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
-   resources :users do
+  resources :users do
     member do
       get :following, :followers
     end

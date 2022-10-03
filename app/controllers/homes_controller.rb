@@ -8,9 +8,6 @@ class HomesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def about
   end
 end
