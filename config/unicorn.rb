@@ -1,5 +1,5 @@
 #サーバ上でのアプリケーションコードが設置されているディレクトリを変数に入れておく
-app_path = File.expand_path('../../', __FILE__)
+app_path = File.expand_path('../../../', __FILE__)
 
 #アプリケーションサーバの性能を決定する
 #リクエストを受け付けレスポンスを生成するworker(ワーカー)の数を決める
@@ -7,7 +7,7 @@ worker_processes 1
 
 #アプリケーションの設置されているディレクトリを指定
 #UnicornがRailsのコードを動かす際、ルーティングなど実際に参照するファイルを探すディレクトリを指定する
-working_directory app_path
+working_directory "#{app_path}/current" # currentを指定
 
 #Unicornの起動に必要なファイルの設置場所を指定
 #Unicornは、起動する際にプロセスidが書かれたファイルを生成する。その場所を指定。
