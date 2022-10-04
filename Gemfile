@@ -82,3 +82,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'active_storage_validations', '0.8.2'
 gem 'image_processing',           '1.12.2'
 gem 'mini_magick',                '4.9.5'
+
+group :production do
+  gem 'unicorn', '6.1.0'
+end
