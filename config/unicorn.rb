@@ -7,7 +7,7 @@ worker_processes 1
 
 #アプリケーションの設置されているディレクトリを指定
 #UnicornがRailsのコードを動かす際、ルーティングなど実際に参照するファイルを探すディレクトリを指定する
-working_directory "#{app_path}/current" # currentを指定
+working_directory app_path
 
 #Unicornの起動に必要なファイルの設置場所を指定
 #Unicornは、起動する際にプロセスidが書かれたファイルを生成する。その場所を指定。
