@@ -12,12 +12,6 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "index | #{@base_title}"
   end
 
-  # test "should get show" do
-  #   get show_path
-  #   assert_response :success 
-  #   assert_select "title", "show | #{@base_title}"
-  # end
-
   test "should get about" do
     get about_path
     assert_response :success

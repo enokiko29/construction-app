@@ -10,9 +10,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
   end
 
   test "micropost interface" do
-    # log_in_as(@user)
     get root_path
-    # assert_select 'div.pagination'
     # 無効な送信
     assert_no_difference 'Micropost.count' do
       post microposts_path, params: { micropost: { content: "" } }
@@ -28,7 +26,6 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_match content, response.body
     # 投稿を削除する
-    # assert_select 'a', text: 'delete'
     first_micropost = @user.microposts.paginate(page: 1).first
     assert_difference 'Micropost.count', -1 do
       delete micropost_path(first_micropost)
