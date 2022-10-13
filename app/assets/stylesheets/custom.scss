@@ -32,6 +32,25 @@ textarea {
   }
 }
 
+.jumbotron { 
+  background: url("/images/koujigenba1.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  h1,p{
+    font-family: Hiragino Sans;
+    color: white;
+    text-shadow: 2px  2px 3px rgb(56, 56, 56),
+                -2px  2px 3px rgb(56, 56, 56),
+                 2px -2px 3px rgb(56, 56, 56),
+                -2px -2px 3px rgb(56, 56, 56);
+  }
+}
+
+.jumbotron p{
+  font-size: 1.7em;
+}
+
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {

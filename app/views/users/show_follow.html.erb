@@ -5,7 +5,7 @@
       <%= gravatar_for @user %>
       <h1><%= @user.name %></h1>
       <p><%= @user.prefecture %></p>
-      <span><%= link_to "自分のプロフィール", @user %></span>
+      <span><%= link_to "プロフィールを見る", @user %></span>
       <span><b>投稿数</b> <%= @user.microposts.count %></span>
     </section>
     <section class="stats">

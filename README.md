@@ -5,8 +5,9 @@
 ## URL
 
 ## 技術一覧
-ruby2.7.6
-rails6.0.4
+ruby 3.1.2
+rails 7.0.4
+jquery 3.6.1
 devise
 mysql
 aws/ec2

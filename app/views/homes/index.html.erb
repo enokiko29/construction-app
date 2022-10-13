@@ -19,10 +19,12 @@
 <% else %>
 <% provide(:title, "index") %>
     <div class="center jumbotron">
+      <div>
         <h1>工事情報アプリ</h1>
         <p>トップページです。</p>
             <br>
             <%= link_to "新規サインアップ", new_user_registration_path, class: "btn btn-lg btn-primary" %><br><br>
             <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "btn btn-lg btn-primary" %>
-        </div>
+      </div>
+    </div>
 <% end %>
