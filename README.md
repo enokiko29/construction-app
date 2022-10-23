@@ -3,7 +3,7 @@
 これは、榎木康佑によるポートフォリオとして作られたアプリケーションです。
 
 ## URL
-https://construction-app.net/
+http://construction-app.net/
 
 ## 技術一覧
 ruby 3.1.2
